@@ -1,0 +1,48 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+
+{% include 'flash.html' %}
+<center>
+<div class="well">
+    <form class="form-horizontal" action="" method="post" name="post">
+        {{form.hidden_tag()}}
+        <div class="control-group{% if form.errors.post %} error{% endif %}">
+            <label class="control-label" for="post"><h3>{{ _('Say EVERYTHING what you think:') }}</h3></label>
+            <div class="controls">
+                {{ form.post(size = 50, maxlength = 140) }}
+                {% for error in form.errors.post %}
+                    <span class="help-inline">[{{error}}]</span><br>
+                {% endfor %}
+                <button type="submit" class="btn btn-group-lg btn-primary " value="{{ _('Post!') }}">
+                <h7><span class="glyphicon glyphicon-send"></h7>
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
+</center>
+ <header>
+ <h3> <span class="glyphicon glyphicon-circle-arrow-down"> All Posts <span class="glyphicon glyphicon-circle-arrow-down"> </h3>
+</header>
+{% for post in posts.items %}
+    {% include 'post.html' %}
+{% endfor %}
+<header>
+ <h3> <span class="glyphicon glyphicon-circle-arrow-up"> All Posts <span class="glyphicon glyphicon-circle-arrow-up"> </h3>
+</header>
+<ul class="pager">
+    {% if posts.has_prev %}
+    <li class="previous"><a href="{{ url_for('index', page = posts.prev_num) }}"><h7><span class="glyphicon glyphicon-arrow-left">{{ _(' New Posts') }}</h7></a></li>
+    {% else %}
+    <li class="previous disabled"><a href="#"><h7><span class="glyphicon glyphicon-arrow-left">{{ _(' New Posts') }}</h7></a></li>
+    {% endif %}
+    {% if posts.has_next %}
+    <li class="next"><a href="{{ url_for('index', page = posts.next_num) }}"><h7><span class="glyphicon" > {{ _('Old Posts ') }}<span class="glyphicon glyphicon-arrow-right"> </h7></a></li>
+    {% else %}
+    <li class="next disabled"><a href="#"><h7><span class="glyphicon" > {{ _('Old Posts ') }}<span class="glyphicon glyphicon-arrow-right"> </h7></a></li>
+    {% endif %}
+</ul>
+{% endblock %}

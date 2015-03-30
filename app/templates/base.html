@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{title}} Blog For Everybody</title>
+    {% else %}
+    <title>Blog For Everybody</title>
+    {% endif %}
+    <link href="http://ironsummitmedia.github.io/startbootstrap-freelancer/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://ironsummitmedia.github.io/startbootstrap-freelancer/css/freelancer.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/moment.min.js"></script>
+    {% if g.locale != 'en' %}
+    <script src="/static/js/moment-{{g.locale}}.min.js"></script>
+    {% endif %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    function translate(sourceLang, destLang, sourceId, destId, loadingId) {
+        $(destId).hide();
+        $(loadingId).show();
+        $.post('/translate', {
+            text: $(sourceId).text(),
+            sourceLang: sourceLang,
+            destLang: destLang
+        }).done(function(translated) {
+            $(destId).text(translated['text'])
+            $(loadingId).hide();
+            $(destId).show();
+        }).fail(function() {
+            $(destId).text("{{ _('Error: Could not contact server.') }}");
+            $(loadingId).hide();
+            $(destId).show();
+        });
+    }
+    </script>
+  </head>
+  <body>
+
+
+
+      <nav class="navbar navbar-default navbar-fixed-top navbar-shrink">
+       <div class="container">
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="/">Blog for Everybody <span class="glyphicon glyphicon-send"></a>
+        </div>
+           <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1" aria-expanded="false" style="height: 1px;">
+            <ul class="nav navbar-nav navbar-right">
+              {% if g.user.is_authenticated() %}
+              <li class="page-scroll"><a href="{{ url_for('index') }}"> <span class="glyphicon glyphicon-home"> {{ _('Home') }}</a></li>
+
+              <li class="page-scroll"><a href="{{ url_for('user', nickname = g.user.nickname) }}"> <span class="glyphicon glyphicon-eye-open"> {{ _('Your Profile') }}</a></li>
+              <li class="page-scroll"><a href="{{ url_for('logout') }}"> <span class="glyphicon glyphicon-off"> {{ _('Logout') }}</a></li>
+              <!-- Search{% endif %}
+                {% if g.user.is_authenticated() %}
+                <form class="navbar-search pull-left" action="{{url_for('search')}}" method="post" name="search">{{g.search_form.hidden_tag()}}{{g.search_form.search(size=20,placeholder=_('Search'),class="search-query")}}</form>
+                {% endif %} -->
+            </ul>
+          </div>
+         </div>
+        </div>
+      </nav>
+    <section id="block_content">
+  <div class="container">
+      <div class="row">
+        <div class="span12">
+          {% block content %}{% endblock %}
+        </div>
+      </div>
+  </div>
+</section>
+
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <p>
+                    <a href="#">Back to top</a>
+                </p>
+              <p>
+                Blog for Everybody© 2015
+              </p>
+              <p>
+                Created by Dima Chuvardinsky
+              </p>
+        </footer>
+
+  </body>
+</html>
+    <!-- Navigation -->

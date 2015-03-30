@@ -1,0 +1,15 @@
+<p>{{_('Dear')}} {{user.nickname}},</p>
+<p>{{_('Now ')}}<a href="{{url_for("user", nickname = follower.nickname, _external = True)}}">{{follower.nickname}}</a>{{_(' Start Follow Your!')}}</p>
+<table>
+    <tr valign="top">
+        <td><img src="{{follower.avatar(70)}}"></td>
+        <td>
+            <a href="{{url_for('user', nickname = follower.nickname, _external = True)}}">{{follower.nickname}}</a><br />
+            {{follower.about_me}}
+        </td>
+    </tr>
+</table>
+<br>
+<a><img src="http://cs623618.vk.me/v623618712/2cef5/NMrRUgL45TY.jpg"></a>
+<p>{{_('Regards,')}}</p>
+<p>{{_('The')}} <code>Blog For Everybody</code> {{_('admin.')}}</p>

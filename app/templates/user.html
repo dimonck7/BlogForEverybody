@@ -1,0 +1,50 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+{% include 'flash.html' %}
+        <!--</center>-->
+<div class="well">
+    <div class="pull-right">
+        <img src="{{user.avatar(128)}}" class="img-polaroid">
+    </div>
+    <h2>{{user.nickname}}</h2>
+
+    {% if user.about_me %}<font size="+1" ><a><span class="glyphicon glyphicon-info-sign"> </span> {{user.about_me}} </a></font>{% endif %}
+
+    <p>{{ _('Followers:') }} {{user.followers.count() - 1}} | {{ _('Following:') }} {{user.followed.count() - 1}}
+    {% if user.id == g.user.id %}
+        <a href="{{url_for('edit')}}"><h4>{{ _('Edit your profile') }}</h4></a>
+    {% elif not g.user.is_following(user) %}
+        <a href="{{url_for('follow', nickname = user.nickname)}}"><h4>{{ _('Follow') }}</h4></a>
+    {% else %}
+        <a href="{{url_for('unfollow', nickname = user.nickname)}}"><h4>{{ _('Unfollow') }}</h4></a>
+    {% endif %}
+    {% if user.last_seen %}
+<em><font size="+0" ><span class="glyphicon glyphicon-time"> {{ _('Last seen:') }} {{ momentjs(user.last_seen).calendar() }}</font></em>
+    {% endif %}
+    </p>
+</div>
+<header>
+ <h3> <span class="glyphicon glyphicon-hand-down"> {{user.nickname}} Posts <span class="glyphicon glyphicon-hand-down"> </h3>
+</header>
+{% for post in posts.items %}
+    {% include 'post.html' %}
+{% endfor %}
+<header>
+ <h3> <span class="glyphicon glyphicon-hand-up"> {{user.nickname}} Posts <span class="glyphicon glyphicon-hand-up"> </h3>
+</header>
+<ul class="pager">
+    {% if posts.has_prev %}
+    <li class="previous"><a href="{{ url_for('user', nickname = user.nickname, page = posts.prev_num) }}"><h7><span class="glyphicon glyphicon-arrow-left">{{ _(' New Posts') }}<span class="glyphicon glyphicon-arrow-left"></h7></a></li>
+    {% else %}
+    <li class="previous disabled"><a href="#"><h7><span class="glyphicon glyphicon-arrow-left">{{ _(' New Posts') }}</h7></a></li>
+    {% endif %}
+    {% if posts.has_next %}
+    <li class="next"><a href="{{ url_for('user', nickname = user.nickname, page = posts.next_num) }}"><h7><span > {{ _('Old Posts ') }}<span class="glyphicon glyphicon-arrow-right"></h7></a></li>
+    {% else %}
+    <li class="next disabled"><a href="#"><h7><span class="glyphicon" > {{ _('Old Posts ') }}<span class="glyphicon glyphicon-arrow-right"> </h7></a></li>
+    {% endif %}
+</ul>
+
+{% endblock %}
