@@ -28,6 +28,8 @@ I you are interested in?
 I do not know exactly how long the application will be available at this address, but nothing prevents you to check whether or not it is available!
 Then you ----> [here](http://blog-for-everybody.herokuapp.com)
 
+If you can't visit the website, look [this](https://www.dropbox.com/sh/9smtqghgvb018ch/AADfZKbtlSdC_7GdYGM2mMC0a?dl=0) pictures on Dropbox
+
 About
 ------------
 
@@ -37,6 +39,7 @@ More information about what was used can be found `requirements.txt`
 
 You can also test my app[here](http://blog-for-everybody.herokuapp.com)
 
+Look [this](https://www.dropbox.com/sh/9smtqghgvb018ch/AADfZKbtlSdC_7GdYGM2mMC0a?dl=0) pictures on Dropbox
 
 Installation and Running
 ------------
