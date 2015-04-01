@@ -25,6 +25,7 @@ Additional functions: translate all posts (so far only eng), setting up an avata
 
 I you are interested in?
 
+I do not know exactly how long the application will be available at this address, but nothing prevents you to check whether or not it is available!
 Then you ----> [here](http://blog-for-everybody.herokuapp.com)
 
 About
