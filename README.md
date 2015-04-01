@@ -25,7 +25,7 @@ Additional functions: translate all posts (so far only eng), setting up an avata
 
 I you are interested in?
 
-Then you ----> [here](http://blog-fore-everybody.herokuapp.com)
+Then you ----> [here](http://blog-for-everybody.herokuapp.com)
 
 About
 ------------
@@ -34,7 +34,7 @@ My application made by a Python + Flask
 
 More information about what was used can be found `requirements.txt`
 
-You can also test my app[here](http://blog-fore-everybody.herokuapp.com)
+You can also test my app[here](http://blog-for-everybody.herokuapp.com)
 
 
 Installation and Running
