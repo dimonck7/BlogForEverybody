@@ -1,6 +1,6 @@
-import os
 from flask import Flask
 from flask.ext.sqlalchemy import SQLAlchemy
+import os
 from flask.ext.login import LoginManager
 from flask.ext.openid import OpenID
 from flask.ext.mail import Mail
@@ -42,4 +42,3 @@ if not app.debug:
 app.jinja_env.globals['momentjs'] = momentjs
 
 from app import views, models
-
