@@ -3,9 +3,10 @@
 Community Version
 =========
 
-History Blog For Everybody
+History of "Blog For Everybody"
 ------------
-I had the idea!Make a blog just is not like other blogs.
+
+I had the idea to make a blog just not like other blogs.
 
 In this blog you can:
 
@@ -15,20 +16,21 @@ About anything!
 
 And read anyone!
 
-I gave the name of the mind "Blog For Everybody"
+The name of this project is "Blog For Everyone"
 
-Of course this blog is present, the content that is to beat each blog.
+Of course, it presents "some regular blog content", which is necessarily involved in all blog platforms around the web and is simply understandable and easy to use!
 
-This post writing, editing their profile on his personal page, and you can follow / unfollow other users .After you follow other user, his posts get to the main page where you can see them them with their, do not worry all their positions can look at your page.
+Post writing, editing your profile and your personal page, ability to follow and unfollow other users. After you follow some bloggers, their new posts go to the main page where you can see them. Do not worry, your blog page will be filled with your own posts, no one else's!
 
-Additional functions: translate all posts (so far only eng), setting up an avatar through gravatar,after you someone 'follower' you will receive information about its on your email , sign in with OpenID(Google,AOL,Livejornal and...) and other add.
+Additional functions: 
+You can have a free translation of all posts (so far only english). 
+Set up and create your blog page as you wish. Choose an avatar and customize it! 
+After you become someones follower, you can optionally receive all information about this blogger, which sends on your email. Finally, log in with OpenID(Google,AOL,Livejornal and other adds).
 
-I you are interested in?
+Try it!
+I don't know exactly how long the application will be available on this address, but nothing prevents you to check whether or not it is available! —--> [Here](http://blog-for-everybody.herokuapp.com) we go!
 
-I do not know exactly how long the application will be available at this address, but nothing prevents you to check whether or not it is available!
-Then you ----> [here](http://blog-for-everybody.herokuapp.com)
-
-If you can't visit the website, look [this](https://www.dropbox.com/sh/9smtqghgvb018ch/AADfZKbtlSdC_7GdYGM2mMC0a?dl=0) pictures on Dropbox
+If you can't visit the website, check out [this](https://www.dropbox.com/sh/9smtqghgvb018ch/AADfZKbtlSdC_7GdYGM2mMC0a?dl=0) project pictures on Dropbox!
 
 About
 ------------
